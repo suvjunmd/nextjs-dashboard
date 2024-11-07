@@ -77,6 +77,7 @@ export default async function InvoicesTable({
                 </th>
               </tr>
             </thead>
+
             <tbody className="bg-white">
               {invoices?.map((invoice) => (
                 <tr
@@ -92,21 +93,27 @@ export default async function InvoicesTable({
                         height={28}
                         alt={`${invoice.name}'s profile picture`}
                       />
+
                       <p>{invoice.name}</p>
                     </div>
                   </td>
+
                   <td className="whitespace-nowrap px-3 py-3">
                     {invoice.email}
                   </td>
+
                   <td className="whitespace-nowrap px-3 py-3">
                     {formatCurrency(invoice.amount)}
                   </td>
+
                   <td className="whitespace-nowrap px-3 py-3">
                     {formatDateToLocal(invoice.date)}
                   </td>
+
                   <td className="whitespace-nowrap px-3 py-3">
                     <InvoiceStatus status={invoice.status} />
                   </td>
+
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
                       <UpdateInvoice id={invoice.id} />
